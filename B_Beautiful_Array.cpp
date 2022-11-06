@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Binary_Deque.cpp */
-/*             Date: 2022-07-12 20:17:35 */
+/*                Problem ID : B_Beautiful_Array.cpp */
+/*             Date: 2022-08-20 21:10:14 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,55 +58,49 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-    int n, s;
-    cin>>n>>s;
+     ll n, k, b, s;
+    cin >> n >> k >> b >> s;
+    ll ar[n] = {0};
 
-    int a[n+1],b[n+1];
-    int sum  = 0;
-    for(int i = 0; i < n; i++)
+    ll x = k * b;
+    ll y = k * (b + 1);
+
+    ll sum = 0;
+    if (s >= y)
     {
-        cin >> a[i];
-        sum += a[i];
+        ar[0] = y - 1;
+        x = s - (y - 1);
     }
-     if(sum<s)
+    else
+    {
+        ar[0] = x;
+        x = s - x;
+    }
+    sum = ar[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (x > 0)
+        {
+            if (x >= k)
+            {
+                ar[i] = k - 1;
+                x -= (k - 1);
+            }
+            else
+            {
+                ar[i] = x;
+                x = 0;
+            }
+            sum += ar[i];
+        }
+    }
+    if (sum != s)
     {
         cout << -1 << nl;
         return;
     }
-    else if(sum==s)
-    {
-        cout << 0 << nl;
-        return;
-    }
-    vi one_kotai(n+1);
-    int x;
-    x = n;
-    for (int i = n - 1; i > -1; i--)
-    {
-        one_kotai[i] = x;
-        if (a[i] == 1)
-            x = i;
-    
-    }
-    int ans = INT_MAX, now = 0, del = 0;
-    queue<int> q;
-    for (int i = 0;i<n;i++)
-    {
-        q.push(a[i]);
-        now += a[i];
-        while(!q.empty() && now>s)
-        {
-            int f = q.front();
-            now -= f;
-            q.pop();
-            del++;
-        } 
-        if(now==s)
-        {
-            ans = min(ans, del + (n - one_kotai[i]));
-        }
-    }
-    cout << ans << nl;
+   for(int i = 0; i <n;i++) cout<<ar[i]<<" ";
+    cout << nl;
 }
 int main(){
 fastIO

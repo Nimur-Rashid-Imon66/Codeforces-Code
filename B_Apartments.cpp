@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Binary_Deque.cpp */
-/*             Date: 2022-07-12 20:17:35 */
+/*                Problem ID : B_Apartments.cpp */
+/*             Date: 2022-08-24 20:54:53 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,59 +58,31 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-    int n, s;
-    cin>>n>>s;
+    int n, m, k;
+    cin >> n >> m >> k;
 
-    int a[n+1],b[n+1];
-    int sum  = 0;
-    for(int i = 0; i < n; i++)
+    vi a(n), b(m);
+    for(int i = 0; i <n;i++) cin>>a[i];
+    for(int i = 0; i <m;i++) cin>>b[i];
+
+    sort(all(a));
+    sort(all(b));
+    ll cnt = 0;
+    int j = 0;
+    for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
-        sum += a[i];
+        if(j>=m) break;
+        while(a[i]-k > b[j] && j<m)
+            j++;
+        if(abs(a[i]-b[j]) <=k )
+            cnt++, j++;
+        
     }
-     if(sum<s)
-    {
-        cout << -1 << nl;
-        return;
-    }
-    else if(sum==s)
-    {
-        cout << 0 << nl;
-        return;
-    }
-    vi one_kotai(n+1);
-    int x;
-    x = n;
-    for (int i = n - 1; i > -1; i--)
-    {
-        one_kotai[i] = x;
-        if (a[i] == 1)
-            x = i;
-    
-    }
-    int ans = INT_MAX, now = 0, del = 0;
-    queue<int> q;
-    for (int i = 0;i<n;i++)
-    {
-        q.push(a[i]);
-        now += a[i];
-        while(!q.empty() && now>s)
-        {
-            int f = q.front();
-            now -= f;
-            q.pop();
-            del++;
-        } 
-        if(now==s)
-        {
-            ans = min(ans, del + (n - one_kotai[i]));
-        }
-    }
-    cout << ans << nl;
+    cout<<cnt<<endl;//>>>>
 }
 int main(){
 fastIO
-testcase
-//solve();
+//testcase
+solve();
 return 0;
 }

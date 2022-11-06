@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Binary_Deque.cpp */
-/*             Date: 2022-07-12 20:17:35 */
+/*                Problem ID : B_Rule_of_League.cpp */
+/*             Date: 2022-10-01 17:56:27 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,55 +58,36 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-    int n, s;
-    cin>>n>>s;
-
-    int a[n+1],b[n+1];
-    int sum  = 0;
-    for(int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-        sum += a[i];
-    }
-     if(sum<s)
+    int  n,x,y;
+    cin>>n>>x>> y;
+    if(x&&y ||(!x&&!y))
     {
         cout << -1 << nl;
         return;
     }
-    else if(sum==s)
+    if(((n-1) % max(x,y)) !=0)
     {
-        cout << 0 << nl;
+        cout << -1 << nl;
         return;
     }
-    vi one_kotai(n+1);
-    int x;
-    x = n;
-    for (int i = n - 1; i > -1; i--)
+    else
     {
-        one_kotai[i] = x;
-        if (a[i] == 1)
-            x = i;
-    
-    }
-    int ans = INT_MAX, now = 0, del = 0;
-    queue<int> q;
-    for (int i = 0;i<n;i++)
-    {
-        q.push(a[i]);
-        now += a[i];
-        while(!q.empty() && now>s)
+        int ans = max(x, y);
+        int cnt = 0;
+        int p=1;
+
+        for(int i=2;i<=n;i++)
         {
-            int f = q.front();
-            now -= f;
-            q.pop();
-            del++;
-        } 
-        if(now==s)
-        {
-            ans = min(ans, del + (n - one_kotai[i]));
+            
+            cout << p << " ";
+            cnt++;
+            if(cnt==ans )
+                cnt = 0;
+            if(cnt ==0)
+                p = i+1;
         }
     }
-    cout << ans << nl;
+    cout << nl;
 }
 int main(){
 fastIO
