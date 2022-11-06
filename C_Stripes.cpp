@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : C_Stripes.cpp */
+/*             Date: 2022-10-13 20:49:22 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,61 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
-
+   char grid[8][8];
+   char ch;
+   //cin>>ch;
+   for(int i=0; i<8; i++)
+      cin>>grid[i];
+   
+   //B 
+   int i = 0;
+   
+    for(int j=0; j<8; j++) {
+        i = 0;
+        bool f = true;
+      if(grid[i][j]=='B'){
+      while(i<8)
+      {
+        if(grid[i][j]!='B')
+        {
+            f=false;
+        }
+        i++;
+      }
+      if(f)
+      {
+        cout<<'B'<<nl;
+        return;
+      }
+     }
+    }
+   int j = 0;
+   
+   for(i = 0;i<8;i++)
+   {
+    j = 0;
+    bool f = true;
+        if(grid[i][j]=='R'){
+      while(j<8)
+      {
+        if(grid[i][j]!='R')
+        {
+            f=false;
+        }
+        j++;
+      }
+      if(f)
+      {
+        cout<<'R'<<nl;
+        return;
+      }
+     }
+   }
+  
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

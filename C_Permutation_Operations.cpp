@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : C_Permutation_Operations.cpp */
+/*             Date: 2022-10-15 21:41:34 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,42 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+   int n;
+   cin >> n;
+   vi a(n+1);
+  
+   for(int i = 1;i<=n;i++)
+   {
+     cin>>a[i];
+   }
+   int j = 1;
+   for(int i = n;i>1 ;i--)
+   {
+     
+     if(a[i-1]==a[i])
+     {
+        continue;
+     }
+     else
+     {
+       
+        while(a[i]<a[i-1])
+        {
+            a[i]+= j;
+            cout<<i<<" ";
+            j++;
+        }
+     }
+   }
+   
+   for(j;j<=n;j++ )
+   cout<<1<<" ";
+   cout<<nl;
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

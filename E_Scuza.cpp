@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : E_Scuza.cpp */
+/*             Date: 2022-10-13 21:45:30 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,54 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
-
+   ll n,q;
+   cin>> n >> q;
+   vi a(n) ;
+   ll mx = 0;
+   ll sum = 0;
+   map<ll,ll> mp; 
+   mp[0] = 0;
+   vl b;
+   b.pb(0);
+   for(ll i = 0 ;i < n ; i++){
+        cin>>a[i];
+        if(a[i]>mx) 
+        {
+            mx = a[i]; 
+            sum += a[i]; 
+            b.pb(mx);
+        }
+        else 
+        {
+            sum += a[i];
+        }
+         mp[mx] = sum;
+      //  cout<<mx<<" "<<sum<<" "<<mp[mx]<<nl;
+       
+   } 
+ //  mp[INT_MAX] = sum;
+ // 11 14
+   for(ll i =0; i<q;i++)
+   {
+      ll x;
+       cin>>x;
+       auto it = upper_bound(all(b),x);
+       if(it!=b.end())
+       {
+        // cout<<mp[11]<<" : " ;
+          cout<<mp[b[it - b.begin() - 1]]<<" ";
+       }
+       else
+       {
+         
+         cout<<mp[mx]<<" ";
+       }
+   }
+  cout<<nl;
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

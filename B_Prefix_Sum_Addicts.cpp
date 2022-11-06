@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Prefix_Sum_Addicts.cpp */
+/*             Date: 2022-10-05 20:43:05 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,54 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
-
+   int n,k;
+   cin >> n >> k;
+   vi pres(n);
+   for (int i = 0;i< n;i++)
+       cin >> pres[i];
+   int st = n - k + 1;
+   vi a(n) ,b,c;
+    if(st==1){
+        a[0] = pres[0];
+        b.pb(a[0]);
+        c.pb(a[0]);
+    }
+    for (int i = st - 1; i < n - 1; i++)
+    {
+        int x = abs(pres[i + 1] - pres[i]);
+        b.pb(x);
+        c.pb(x);
+        a[i + 1] = x;
+  }
+   sort(all(c));
+   if(b!=c){
+       No return;
+   }
+   if(st==1)
+   {
+       Yes return;
+   }
+   else
+   {
+        for(int i = )
+   }
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }
+
+
+
+//if n = 5
+print_koro(int i){
+    if(i>n) return;
+    cout<<i<<" ";
+    print_koro(i+1);
+}
+
+Output :
+1 2 3 4 5
+

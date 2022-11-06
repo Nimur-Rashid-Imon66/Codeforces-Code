@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_BAN_BAN.cpp */
+/*             Date: 2022-11-04 20:49:24 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,29 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+  int n;
+  cin >> n;
+  if(n==1)
+  {
+    cout<<1<<nl<<1<<" "<<2<<nl;
+    return;
+  }
+  vector<pair<int,int>> x;
+  ll i = 1;
+  ll j = 3*n;
+  int ans  = ceil(n/2.0);
+  cout<<ans<<nl;
+  while(i<j)
+  {
+    cout<<i<<" "<<j<<nl;//>>>>>>
+    i+=3;
+    j-=3;
+  }
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

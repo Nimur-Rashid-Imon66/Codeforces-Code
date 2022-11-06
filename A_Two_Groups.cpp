@@ -3,8 +3,9 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : A_Two_Groups.cpp */
+/*             Date: 2022-11-04 20:40:45 */
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +59,21 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+   int n;
+   cin >> n;
+   vi a(n);
+   ll sum = 0;
+   for(int i = 0; i < n; i++)
+   {
+    cin >> a[i];
+    sum += a[i];
+   }
+   cout<<abs(sum)<<endl;//>>
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

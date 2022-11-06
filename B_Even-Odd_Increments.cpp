@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Even-Odd_Increments.cpp */
+/*             Date: 2022-10-16 20:59:00 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,49 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+  int n,q;
+  cin >> n >> q;
+  vi a(n) ;
+  ll o = 0, e = 0 , sum = 0 ;
+  for(int i=0;i< n;i++)
+   {
+    cin >> a[i];
+    sum += a[i];
+    if(a[i]%2) o++;
+    else e++;
 
+   }
+   for(int i=0;i<q;i++)
+   {
+        ll x,y;
+        cin >> x >> y;
+        if(x)
+        {
+            ll z = o * y;
+            sum+=z;
+            if(y%2)
+            {
+                e+=o;
+                o = 0;
+            }
+        }
+        else
+        {
+             ll z = e * y;
+            sum+=z;
+            if(y%2)
+            {
+                o+=e;
+                e = 0;
+            }
+        }
+        cout<<sum<<nl;
+   }
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

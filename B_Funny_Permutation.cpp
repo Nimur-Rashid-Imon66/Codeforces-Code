@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Funny_Permutation.cpp */
+/*             Date: 2022-10-11 20:54:19 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,31 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+  int n ;
+  cin>>n;
+  if(n==3)
+  {
+    cout<<-1<<nl;
+    return;
+  }
+  if(!(n%2))
+  {
+    for(int i = n;i>0;i--) cout<<i<<" ";
+    cout<<nl;
+  }
+  else
+  {
+    int x = n/2;
+    int y = n;
+    for(int i = 1;i<=x;i++) cout<<y--<<" ";
+    for(int i= 1;i<=y;i++) cout<<i<<" ";
+    cout<<nl;
+  }
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Getting_Zero.cpp */
+/*             Date: 2022-11-04 19:10:52 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -55,15 +55,37 @@ typedef unsigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
-
+int ans[32769];
 void solve()
 {
-
-
+   int n;
+   cin >> n;
+   cout<<ans[n]<<" ";//>>>>
+ 
 }
 int main(){
 fastIO
-//testcase
+for(int i = 1;i<=32768 ;i++)
+{
+    int cnt = 0;
+    int x = i;
+    while(x%2==0)
+    {
+        cnt++;
+        x/=2;
+        
+    }
+    ans[i] = min(15-cnt,15);
+}
+for(int i = 1;i<=32768 ;i++)
+{
+   for(int j = 1;j<=15;j++)
+   {
+    ans[i] = min(ans[i],j+ans[i+j]);
+   }
+}
+
+testcase
 //solve();
 return 0;
 }

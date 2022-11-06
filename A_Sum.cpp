@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : A_Sum.cpp */
+/*             Date: 2022-10-13 20:35:55 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,16 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+   ll a,b,c;
+   cin >> a >> b >> c;
+   if(a+b==c || a+c==b || b+c==a)
+    YES 
+    else NO
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

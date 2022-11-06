@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : C_Minimize_the_Thickness.cpp */
+/*             Date: 2022-10-11 21:20:23 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,40 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+   int n;
+   cin >> n;
+   vi a(n) ;
+   for (int i = 0; i < n; i++) cin >>a[i];
 
+    int  ans = INT_MAX;
+   for(int i = 1;i<=n;i++)
+   {
+        ll sum = 0;
+        for(int j = 0;j<i;j++) sum +=a[j];
+       
+        int lcl_mx  = i;
+        int k = i;
+        while(k<n)
+        {
+            ll sum2 = 0;
+            int sz = 0;
+            while(sum2 < sum && k<n)
+            {
+                sum2 += a[k];
+                sz++;
+                k++;
+            }
+            lcl_mx = max(sz,lcl_mx); 
+            if(sum2!=sum) {lcl_mx = n; break; }
+        }
+        ans = min(ans, lcl_mx)   ;
+   }
+   cout<<ans<<nl;
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

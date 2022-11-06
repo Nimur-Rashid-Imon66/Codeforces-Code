@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Bit_Flipping.cpp */
+/*             Date: 2022-11-02 22:43:44 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,71 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+    int n,k;
+    cin>>n>>k;
+    string s;  
+    cin>>s; 
 
+    vi mv(n,0);
+    if(k==0)
+    {
+        cout<<s<<nl;
+        for(auto it : mv) cout<<it<<" ";
+        cout<<nl;
+        return;
+    }
+    if(k%2==1)
+    {
+        k--;
+        int f_o = n-1;
+        for(int i = 0;i<n;i++)
+        {
+            if(s[i]=='1')
+            {
+             f_o  = i; 
+             break;
+            }
+        }
+        for(int i = 0;i<n;i++)
+        {
+            if(i==f_o) continue;
+
+            if(s[i]=='1') s[i] = '0';
+            else s[i] = '1';
+        }
+        mv[f_o] ++;
+    }
+    vi zero;
+    for(int i=0; i<n;i++) 
+        if(s[i]=='0') zero.pb(i);
+    
+    for(int i = 0 ;i+1<zero.size() && k>0; i+=2)
+    {
+        mv[zero[i]]++;
+        mv[zero[i+1]]++;
+        s[zero[i]] ='1';
+        s[zero[i+1]] ='1';
+        k-=2;
+    }
+    if(zero.size()%2==1 && k>0)
+    {
+        mv[zero[zero.size()-1]] ++;
+        mv[n-1]++;
+        s[zero[zero.size()-1]] = '1';
+        s[n-1] = '0';
+        k-=2;
+    }
+
+    if(k) mv[n-1]+=k;
+
+    cout<<s<<nl;
+    for(auto it : mv) cout<<it<<" ";
+    cout<<nl;
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : A_Compare_T-Shirt_Sizes.cpp */
+/*             Date: 2022-10-11 20:38:21 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,72 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+   string a,b;
+   cin >>a>>b;
 
+   char alast = a[a.size()-1];
+   char blast = b[b.size()-1];
+   map<char,int>mp;
+   mp.in({'S',1});
+   mp.in({'M',2});
+   mp.in({'L',3});
+   if(mp[alast]<mp[blast])
+   {
+    cout<<'<'<<nl;
+   }
+   else if(mp[alast]>mp[blast])
+   {
+    cout<<'>'<<nl;
+   }
+   else
+   {
+     if(alast=='S')
+     {
+        if(a.size()==b.size())
+        {
+            cout<<'='<<nl;
+            return;
+        }
+        else if(a.size()>b.size())
+        {
+             cout<<'<'<<nl;
+            return;
+        }
+        else
+        {
+             cout<<'>'<<nl;
+            return;
+        }
+     }
+     else if(alast=='M' )
+     {
+        cout<<'='<<nl;
+        return;
+     }
+     else
+     {
+        if(a.size()==b.size())
+        {
+            cout<<'='<<nl;
+            return;
+        }
+        else if(a.size()>b.size())
+        {
+             cout<<'>'<<nl;
+            return;
+        }
+        else
+        {
+             cout<<'<'<<nl;
+            return;
+        }
+     }
+   }
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

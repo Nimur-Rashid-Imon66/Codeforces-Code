@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : A_Number_Replacement.cpp */
+/*             Date: 2022-10-16 20:43:02 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,37 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+    int n;
+    cin>>n;
+    vi a(n+2);
+    for(int i=0;i<n;i++)
+    cin>>a[i];
+
+    string s;
+    cin>> s;
+
+    map<int,char> mp;
+
+    for(int i = 0;i<n;i++)
+    {
+        if(!mp[a[i]])
+         mp[a[i]] = s[i];
+        else
+        {
+            if(mp[a[i]]!=s[i])
+            {
+                NO return;
+            }
+            else continue;
+        }
+    }
+    YES return;
 
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

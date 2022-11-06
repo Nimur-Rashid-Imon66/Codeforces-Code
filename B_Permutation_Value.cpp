@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Permutation_Value.cpp */
+/*             Date: 2022-10-17 20:54:17 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,30 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+   int n;
+   cin>>n;
+   int mn = 1;
+   int mx = n;
+   for(int i=0;i<n;i++)
+   {
+    if(i%2)
+    {
+        cout<<mx<<" ";
+        mx--;
+    }
+    else
+    {
+        cout<<mn<<" ";
+        mn++;
+    }
+   }
+   cout<<"\n";//>>
+   
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

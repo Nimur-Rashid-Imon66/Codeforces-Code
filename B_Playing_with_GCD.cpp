@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Playing_with_GCD.cpp */
+/*             Date: 2022-10-30 23:39:30 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -54,16 +54,54 @@ typedef long double ld;
 typedef unsigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
+#define  pi         acos(-1.0)
+#define  cos(a)     cos(a*pi/180)
+#define  sin(a)     sin(a*pi/180)
+#define  tan(a)     tan(a*pi/180)
+#define  cosi(a)    acos(a)/(pi/180)
+#define  sini(a)    asin(a)/(pi/180)
+#define  tani(a)    atan(a)/(pi/180)
+#define  Max3(a,b,c) max(a,max(b,c))
+#define  Min3(a,b,c) min(a,min(b,c))
+ll Pow(ll c, ll d) {return d == 0 ? 1 : c * Pow(c, d - 1);}
+ll gcd(ll a, ll b) {return b == 0 ? a : gcd(b, a % b);}
+ll lcm(ll a, ll b) {return ((a * b) / gcd(a, b));}
+ll BigMod(ll b, ll p, ll m) {if (p == 0) return 1;ll ans = BigMod(b, p/2, m);ans = ( ans * ans ) % m;if (p % 2 == 1) ans = (ans * b) % m;return ans;}
+ll binarySearch(ll arr[], ll l, ll r, ll x) {if (r >= l){ll mid = l+(r-l) / 2;if (arr[mid] == x) return mid;if (arr[mid] > x) return binarySearch(arr, l, mid-1, x);return binarySearch(arr, mid+1, r, x);}return -1 ;}
+ll ModInv(ll a, ll m){return BigMod(a, m-2, m);}
+ll base_to_dec(ll base , string x){ll da = 0,j = 0,i = x.size() - 1;while(i>=0){int z = (x[j] - '0');da += z * Pow(base, i);i--,j++;}return da;}
+
 
 
 void solve()
 {
+   int n ; 
 
+   cin>> n;
+   vi a(n);
+   for(int i=0;i<n;i++)
+    cin>>a[i];
+   vi b(n+1);
+   b[0] = a[0];
+   b[n] = a[n - 1];
+
+   for(int i = 1;i<n;i++)
+   {
+    b[i] = lcm(a[i] , a[i-1]);
+   }
+   for(int i = 0;i<n;i++)
+   {
+    if(gcd(b[i],b[i+1])!= a[i])
+     {
+        NO return;
+     }
+   }
+   YES
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

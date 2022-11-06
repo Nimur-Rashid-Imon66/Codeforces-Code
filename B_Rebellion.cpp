@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Rebellion.cpp */
+/*             Date: 2022-10-15 20:45:38 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,50 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+   int n;cin >> n;
+   vi a(n+1) , b(n+1);
+   ll o = 0;
+  deque<int> mp;
+    for (int i = 1; i <= n;i++){
+         cin>>a[i]; b[i] = a[i];
+         if(a[i]) {
+            mp.pb(i); 
+            o++;
+         }
+    }
+    sort(all(b));
+    if(a==b)
+    {
+        cout<<0<<nl;
+        return;
+    }
+    int cnt=0;
+    for(int i = n ;i>=1;i--)
+    {
+        if(o==0)
+        {
+            cout<<cnt<<nl;
+            return;
+        }
+        if(!a[i])
+        {
+            mp.pop_front();
+            o--;
+            cnt++;
+        }
+        else
+        {
+            o--;
+            mp.pop_back();
+        }
+    }
+
 
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

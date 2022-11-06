@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : A_Maxmina.cpp */
+/*             Date: 2022-10-15 20:39:41 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,26 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+    int n,k;
+cin>>n>>k;
+bool o = false;
+for(int i=0;i<n;i++){
+    int x ;
+    cin>>x;
+    if(x) o = true;
+}
+if(o)
+{
+    YES return ;
 
-
+}
+else {
+    NO return ;
+}
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

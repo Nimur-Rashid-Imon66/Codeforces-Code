@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : F_Smaller.cpp */
+/*             Date: 2022-10-14 01:28:08 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,71 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
-
+    string s = "a" , t = "a";
+    char smx = 'a' , smn = 'a';
+    char tmx = 'a' , tmn = 'a';
+    ll slen = 1,tlen = 1;
+    int n;
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        int a,b;
+        cin>>a>>b;
+        string x;
+        cin>>x;
+     //   cout<<a<<' '<<b<<" "<<x<<nl;
+        if(a==1)
+        {
+            ll sl = b * x.size();
+            slen += sl;
+            for(int j = 0;j< x.size();j++)
+            {
+                smx = max(smx , x[j]);
+                smn = min(smn , x[j]);
+            }
+        }
+        else
+        {
+            ll tl = b * x.size();
+            tlen+=tl;
+            for(int j = 0;j< x.size();j++)
+            {
+                tmx = max(tmx , x[j]);
+                tmn = min(tmn , x[j]);
+            }
+        }
+        if(smn<tmx)
+        {
+            YES ;
+        }
+        else if(smn>tmx)
+        {
+            NO ;
+        }
+        else if(smn==tmn && smx==tmx)
+        {
+            if(slen<tlen)
+            {
+                YES ;
+            }
+            else
+            {
+                NO ;
+            }
+        }
+        else NO
+    
+    }
+   // cout<<smn<<" "<<smx<<" "<<tmn<<" "<<tmx<<nl;
+    
+   
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }
+
+
+

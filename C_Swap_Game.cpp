@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : C_Swap_Game.cpp */
+/*             Date: 2022-11-04 21:48:07 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,27 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+    int n;cin>>n;
+    vi a(n);
+    int mn = INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+        mn = min(a[i],mn);
+    }
+    if(a[0]==mn)
+    {
+        cout<<"Bob"<<nl;
+    }
+    else 
+    {
+        cout<<"Alice"<<nl;
+    }
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

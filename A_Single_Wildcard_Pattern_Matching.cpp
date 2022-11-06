@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : A_Single_Wildcard_Pattern_Matching.cpp */
+/*             Date: 2022-11-03 12:28:34 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,116 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+  int n,m;
+  cin >> n >> m;
+
+  string s,t;
+  cin>>s >> t;
+   
+    if(n==1 && s=="*")
+    {
+        YES return;
+    }
+  if(m<n-1)
+  {
+    NO return;
+  }
+  else if(m==n-1)
+  {
+    for(int i=0,j=0;i<n;i++)
+    {
+        if(s[i]=='*') continue;
+        if(s[i]!=t[j])
+        {
+            NO return;
+        }
+        j++;
+    }
+    YES return;
+  }
+  string s1 ="" , s2 ="";
+  bool f = 1;
+  for(int i = 0;i<n;i++)
+  {
+    if(f)
+    {
+        if(s[i]=='*')
+        {
+            f = 0;
+            continue;
+        }
+        s1+=s[i];
+    }
+    else s2+=s[i];
+  }
+  f = 0;
+  int i;
+  for(i=0; i<s1.size();i++)
+  {
+    if(s1[i]!=t[i])
+    {
+        NO return;
+    }
+  }
+  if(!s2.size())
+  {
+    if(s[n-1]=='*')
+    {
+        YES return;
+    }
+    else
+    {
+        if(n!=m)
+        {
+         NO return;
+        }
+        else
+        {
+            YES return;
+        }
+    }
+  }
+  char ch = s[i+1];
+  
+  reverse(all(s2));
+  i = m-1;
+  for(int j = 0;j<s2.size();j++)
+  {
+    if(s2[j]!=t[i])
+    {
+        NO return;
+    }
+    i--;
+  }
+  YES
+//   if(i<m)
+//   {
+//     for(int j=0; j<s2.size();j++)
+//     {
+//         if(s2[j]!=t[i])
+//         {
+//             NO return;
+//         }
+//         i++;
+
+//     }
+//     if(i<m)
+//     {
+//         NO return;
+//     }
+//     YES return;
+//   }
+//   else
+//   {
+//     NO
+//     return;
+//   }
 
 
 }
 int main(){
 fastIO
 //testcase
-//solve();
+solve();
 return 0;
 }

@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : C_Swap_Game.cpp */
+/*             Date: 2022-11-04 21:48:07 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -48,7 +48,7 @@ using namespace std;
 #define min4(a, b,c,d) min(d, min(c, min(a, b)))
 #define rrep(i, n)     for(int i=n-1;i>=0;i--)
 #define rep(i,n)       for(int i=0;i<n;i++)
-#define fastIO ios::sync_with_stdio(0); cin.tie(0); 
+#define fastIO ios::sync_with_stdio(0); cin.tie(0);
 typedef long long ll;
 typedef long double ld;
 typedef unsigned long long ull;
@@ -58,12 +58,62 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
+    int n;
+    cin>>n;
+    map<ll,bool> st;
 
+    vl a;
+    int pe = 0;
+    int ne = 0;
+    int ze = 0;
+   for(int i =0 ;i<n;i++)
+    {
+        ll x;
+        cin>>x;
+       
+        st[x] = true; 
+
+        if(x==0)
+        {
+            ze++;
+            if(ze<4) a.pb(x);
+            continue;
+        }
+        if(x>0) pe++;
+        else if(x<0) ne++;
+        a.pb(x);
+    }
+    if(pe>=3 || ne>=3)
+    {
+        NO return;
+    }
+    n = a.size();
+    if(a.size()<3)
+    {
+        NO return;
+    }
+    for(int i =0 ;i<n;i++){
+        for(int j = 0;j<n;j++){
+            for(int k = 0;k<n;k++)
+            {
+                if(i!=j && j!=k && k!=i) {
+                    ll z = a[i]+a[j]+a[k];
+                    if(!st[z])
+                    {
+                        NO
+                        return;
+                    }
+                }
+                else continue;
+            }
+        }
+    }
+    YES
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

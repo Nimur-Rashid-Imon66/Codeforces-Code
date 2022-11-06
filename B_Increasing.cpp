@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : B_Increasing.cpp */
+/*             Date: 2022-10-13 20:39:27 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -58,12 +58,21 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 void solve()
 {
-
+   int n ; cin>>n;
+   set<int>st;
+   for (int i = 0; i < n;i++)
+   {
+    int x;
+    cin>>x;
+    st.in(x);
+   }
+   if(st.size() == n) YES 
+   else NO
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

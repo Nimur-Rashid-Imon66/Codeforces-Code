@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : D_Masha_and_a_Beautiful_Tree.cpp */
+/*             Date: 2022-10-11 22:42:05 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -55,15 +55,47 @@ typedef unsigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
+// Merge sort in C++
+// Merge two subarrays L and M into arr
+void merge(int a[], int p, int q, int r) {
+  if(*max_element(a+p,a+p+q+1)>*max_element(a+m+1,a+r+1))
+   s
+
+}
+
+// Divide the array into two subarrays, sort them and merge them
+void mergeSort(int a[], int l, int r) {
+  if (l < r) {
+    // m is the point where the array is divided into two subarrays
+    int m = l + (r - l) / 2;
+
+    mergeSort(a, l, m);
+    mergeSort(a, m + 1, r);
+
+    // Merge the sorted subarrays
+    merge(a, l, m, r);
+  }
+}
+
+
+
+// Driver program
 
 void solve()
 {
-
+   int n;
+   cin>>n;
+   int a[n];
+   for(int  i  = 0;i<n;i++) cin>>a[i];
+   
+   mergeSort(a, 0, n - 1);
+   for(int i = 0;i<n;i++) cout<<a[i]<<" ";//>>
+   cout<<nl;
 
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }

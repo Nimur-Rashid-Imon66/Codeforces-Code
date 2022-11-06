@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : z.cpp */
-/*             Date: 2022-10-11 20:16:48 */
+/*                Problem ID : C_Save_the_Magazines.cpp */
+/*             Date: 2022-10-17 21:03:38 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -55,15 +55,97 @@ typedef unsigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
-
 void solve()
 {
+    int n ; cin >> n;
+    string s; cin>>s;
+    vi a(n+1);
+    for(int i=0;i<n;i++) cin>>a[i];
+    vi cfrm(n , 0);
+    ll sum = 0;
+    for(int i = n- 1 ; i>0 ; i--) 
+    {
+        if(i==n-1)
+        {
+            if(s[i]=='1' && a[i]<=a[i-1])
+            {
+                cfrm[i-1] = 1;
+                sum+=a[i-1];
+            }
+            else if(s[i]=='1')
+            {
+                cfrm[i] = 1;
+                sum += a[i];
+            }
+            //  cout<< sum<<endl;
+            continue;
+        }
+        if(s[i]=='1' && cfrm[i])
+        {
+            if(a[i-1]>=a[i+1])
+            {
+               // cout<<i<<" ";
+                cfrm[i-1] = 1;
+                sum += a[i-1];
+            }
+            else
+            {
+            
+                 int j =i+1;
+                while(j<n)
+                {
+                    if(s[j]=='1' && !cfrm[j]){
+                    sum += a[j];
+                    break;
+                    }
 
+                    j++;
+                }
+            }
+        }
+        else if(s[i]=='1' && !cfrm[i])
+        {
+            if(a[i]<a[i-1])
+            {
+                cfrm[i-1] = 1;
+                sum+=a[i-1];
+            }
+            else
+            {
+                cfrm[i] = 1;
+                sum += a[i];
+            }
+        }
+        // cout<< sum<<endl;
+        
+    } 
+    if(s[0]=='1' && cfrm[0])
+    {
+        int j =1;
+        while(j<n)
+        {
+            if(s[j]=='1' && !cfrm[j]){
+            sum += a[j];
+            break;
+            }
 
+            j++;
+        }
+        
+    } 
+    else
+    {
+        if(s[0]=='1' && !cfrm[0])
+        {
+           // cout<<"of";
+            sum += a[0];
+        }
+    }
+   cout<<sum<<nl;
 }
 int main(){
 fastIO
-//testcase
+testcase
 //solve();
 return 0;
 }
