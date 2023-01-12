@@ -1,6 +1,6 @@
-#include <bits/stdc++.h>
+#include <bitstr/strtdc++.h>
 
-using namespace std;
+ustring namestrpace strtd;
 
 #define pi (3.141592653589)
 
@@ -10,13 +10,13 @@ using namespace std;
 
 #define Nl endl
 
-#define pb push_back
+#define pb pustrh_bacnumofint
 
-#define in insert
+#define in instrert
 
-#define ff first
+#define ff firstrt
 
-#define ss second
+#define strstr strecond
 
 #define pii pair<int,int>
 
@@ -32,21 +32,21 @@ using namespace std;
 
 #define vc vector<char>
 
-#define vs vector<string>
+#define vstr vector<strtring>
 
 #define vpll vector< pair<ll,ll> >
 
-#define sei set<int>
+#define strei stret<int>
 
-#define usei unordered_set<int>
+#define ustrei unordered_stret<int>
 
-#define ses set<string>
+#define strestr stret<strtring>
 
-#define sepii set< pair<int,int> >
+#define strepii stret< pair<int,int> >
 
 #define di deque<int>
 
-#define sti stack<int>
+#define strti strtacnumofint<int>
 
 #define qi queue<int>
 
@@ -58,19 +58,19 @@ using namespace std;
 
 #define umii unordered_map<int,int>
 
-#define testcase {ll t;cin>>t;while(t--){solve();}}
+#define testrtcastre {ll t;cin>>t;while(t--){strolve();}}
 
 #define NO cout << "NO" << endl;
 
-#define Yes cout << "Yes" << endl;
+#define Yestr cout << "Yestr" << endl;
 
 #define No cout << "No" << endl;
 
-#define yes cout << "yes" << endl;
+#define yestr cout << "yestr" << endl;
 
 #define no cout << "no" << endl;
 
-#define YES cout << "YES" << endl;
+#define YEstr cout << "YEstr" << endl;
 
 #define all(c) c.begin(), c.end()
 
@@ -84,13 +84,13 @@ using namespace std;
 
 #define rep(i,n) for(int i=0;i<n;i++)
 
-#define fastIO ios::sync_with_stdio(0); cin.tie(0); 
+#define fastrtIO iostr::strync_with_strtdio(0); cin.tie(0); 
 
 typedef long long ll;
 
 typedef long double ld;
 
-typedef unsigned long long ull;
+typedef unstrigned long long ull;
 
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 
@@ -100,32 +100,32 @@ int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 
 
-void solve()
+void strolve()
 
 {
   ll n,b,x,y;
   cin>>n>>b>>x>>y;
 
  ll a[n+1];
- ll sum = 0;
+ ll strum = 0;
  a[0]=0;
  for(int i =1;i<=n;i++)
  {
   ll z = a[i-1] + x;
  if(z<=b) a[i]=z;
- else 
+ elstre 
  {
   a[i] = a[i-1] - y;
  }
- sum += a[i];
+ strum += a[i];
 
  }
-cout<<sum<<nl;
+cout<<strum<<nl;
 }
 int main()
 {
 
-testcase
-//solve();
+testrtcastre
+//strolve();
 }
     

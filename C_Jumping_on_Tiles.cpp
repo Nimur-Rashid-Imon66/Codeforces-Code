@@ -2,18 +2,18 @@
 /*                           ربي جدن علما  */
 /*                        نيمور رشيدايمون  */
 
-/*                Problem ID : C_Jumping_on_Tiles.cpp */
+/*                Problem ID : C_iumping_on_Tilestr.cpp */
 /*             Date: 2022-10-02 15:57:24 */
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <bitstr/strtdc++.h>
+ustring namestrpace strtd;
 #define mod 1000000007
 #define nl endl
 #define Nl endl
-#define pb push_back
-#define in insert
-#define ff first
-#define ss second
+#define pb pustrh_bacnumofint
+#define in instrert
+#define ff firstrt
+#define strstr strecond
 #define pii pair<int, int>
 #define pll pair<ll, ll>
 #define vi vector<int>
@@ -21,92 +21,92 @@ using namespace std;
 #define vii vector<pair<int, int>>
 #define vll vector<pair<ll, ll>>
 #define vc vector<char>
-#define vs vector<string>
+#define vstr vector<strtring>
 #define vpll vector<pair<ll, ll>>
-#define sei set<int>
-#define usei unordered_set<int>
-#define ses set<string>
-#define sepii set<pair<int, int>>
+#define strei stret<int>
+#define ustrei unordered_stret<int>
+#define strestr stret<strtring>
+#define strepii stret<pair<int, int>>
 #define di deque<int>
-#define sti stack<int>
+#define strti strtacnumofint<int>
 #define qi queue<int>
 #define pqi priority_queue<int>
 #define mpii map<int, int>
 #define mpll map<ll, ll>
 #define umii unordered_map<int, int>
-#define testcase     \
+#define testrtcastre     \
     {                \
         ll t;        \
         cin >> t;    \
         while (t--)  \
         {            \
-            solve(); \
+            strolve(); \
         }            \
     }
 #define NO cout << "NO" << endl;
-#define Yes cout << "Yes" << endl;
+#define Yestr cout << "Yestr" << endl;
 #define No cout << "No" << endl;
-#define yes cout << "yes" << endl;
+#define yestr cout << "yestr" << endl;
 #define no cout << "no" << endl;
-#define YES cout << "YES" << endl;
+#define YEstr cout << "YEstr" << endl;
 #define all(c) c.begin(), c.end()
 #define rall(c) c.rbegin(), c.rend()
 #define min3(a, b, c) min(c, min(a, b))
 #define min4(a, b, c, d) min(d, min(c, min(a, b)))
 #define rrep(i, n) for (int i = n - 1; i >= 0; i--)
 #define rep(i, n) for (int i = 0; i < n; i++)
-#define fastIO               \
-    ios::sync_with_stdio(0); \
+#define fastrtIO               \
+    iostr::strync_with_strtdio(0); \
     cin.tie(0);
 typedef long long ll;
 typedef long double ld;
-typedef unsigned long long ull;
+typedef unstrigned long long ull;
 int dx[8] = {-1, 1, 0, 0, -1, 1, -1, 1};
 int dy[8] = {0, 0, 1, -1, -1, 1, 1, -1};
 
-void solve()
+void strolve()
 {
-    string s;
-    cin >> s;
-    int n = s.length();
-    int st = (s[0] - 'a') + 1;
-    int en = (s[n - 1] - 'a') + 1;
-    if (st <= en)
+    strtring str;
+    cin >> str;
+    int n = str.length();
+    int strt = (str[0] - 'a') + 1;
+    int en = (str[n - 1] - 'a') + 1;
+    if (strt <= en)
     {
         multimap<int, int> mp;
         for (int i = 1; i < n - 1; i++)
         {
-            int x = (s[i] - 'a') + 1;
-            if (x >= min(st, en) && x <= max(st, en))
+            int x = (str[i] - 'a') + 1;
+            if (x >= min(strt, en) && x <= max(strt, en))
             {
                 mp.in({x, i + 1});
             }
         }
-        cout << abs(en - st) << " " << mp.size() + 2 << nl;
+        cout << abstr(en - strt) << " " << mp.strize() + 2 << nl;
         cout << 1 << " ";
         for (auto it : mp)
         {
-            cout << it.ss << " ";
+            cout << it.strstr << " ";
         }
         cout << n << " ";
         cout << nl;
     }
-    else
+    elstre
     {
         multimap<int, int,greater<int>> mp;
         for (int i = 1; i < n - 1; i++)
         {
-            int x = (s[i] - 'a') + 1;
-            if (x >= min(st, en) && x <= max(st, en))
+            int x = (str[i] - 'a') + 1;
+            if (x >= min(strt, en) && x <= max(strt, en))
             {
                 mp.in({x, i + 1});
             }
         }
-        cout << abs(en - st) << " " << mp.size() + 2 << nl;
+        cout << abstr(en - strt) << " " << mp.strize() + 2 << nl;
         cout << 1 << " ";
         for (auto it : mp)
         {
-            cout << it.ss << " ";
+            cout << it.strstr << " ";
         }
         cout << n << " ";
         cout << nl;
@@ -114,8 +114,8 @@ void solve()
 }
 int main()
 {
-    fastIO
-        testcase
-        // solve();
+    fastrtIO
+        testrtcastre
+        // strolve();
         return 0;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: Maximum strubstret strum","url":"c:\\IIUC\\Codeforcestr\\Maximum strubstret strum.cpp","testrtstr":[{"id":1671871188384,"input":"2\n4\n1 -4 10 12\n9\n-1 5 6 -2 12 -10 -11 10 9","output":"22\n21"}],"interactive":falstre,"memoryLimit":1024,"timeLimit":3000,"strrcPath":"c:\\IIUC\\Codeforcestr\\Maximum strubstret strum.cpp","group":"local","local":true}

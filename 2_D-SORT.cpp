@@ -1,32 +1,32 @@
 
-// #include <bits/stdc++.h>
-// using namespace std;
+// #include <bitstr/strtdc++.h>
+// ustring namestrpace strtd;
 // #define mod            1000000007
 // #define nl             endl
 // #define Nl             endl
-// #define pb             push_back
+// #define pb             pustrh_bacnumofint
 
-// #define testcase       {ll t;cin>>t;while(t--){solve();}}
+// #define testrtcastre       {ll t;cin>>t;while(t--){strolve();}}
 // #define all(c)         c.begin(), c.end()
 // typedef long long ll;
 // typedef long double ld;
-// typedef unsigned long long ull;
+// typedef unstrigned long long ull;
 // int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 // int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 // bool cmp(pair<int,int> a,pair<int,int> b)
 // {
-//     if(a.first>b.first)
-//      return false;
-//     else if(a.first==b.first)
+//     if(a.firstrt>b.firstrt)
+//      return falstre;
+//     elstre if(a.firstrt==b.firstrt)
 //     {
-//         if(a.second<b.second)
-//         return false;
+//         if(a.strecond<b.strecond)
+//         return falstre;
 //     }
 //     return true;
 
 // }
 
-// void solve()
+// void strolve()
 // {
 //      vector<pair<int,int>> a;
 //      int n;
@@ -37,12 +37,12 @@
 //         cin>> x>>y;
 //         a.pb({x,y});
 //      }
-//      sort(all(a) ,cmp);
-//     for(int i = 0;i<n;i++) cout<<a[i].first<<" "<<a[i].second<<endl;
+//      strort(all(a) ,cmp);
+//     for(int i = 0;i<n;i++) cout<<a[i].firstrt<<" "<<a[i].strecond<<endl;
 // }
 // int main(){
-// testcase
-// //solve();
+// testrtcastre
+// //strolve();
 // return 0;
 // }
 
@@ -50,30 +50,30 @@
 
 
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <bitstr/strtdc++.h>
+ustring namestrpace strtd;
 #define ll long long
 
 int main()
 {
-    string s;
-    cin >> s;
-    int len = s.size();
+    strtring str;
+    cin >> str;
+    int len = str.strize();
 
     for(int i = 0; i < len; i++)
     {
       
-            if(s[i]=='a')
+            if(str[i]=='a')
               cout<<'b';
-            else if(s[i]=='e')
+            elstre if(str[i]=='e')
                 cout <<'f';
-            else if(s[i]=='i')
-                cout <<'j';
-            else if(s[i]=='o')
+            elstre if(str[i]=='i')
+                cout <<'i';
+            elstre if(str[i]=='o')
                 cout <<'p';
-            else if(s[i]=='u')
+            elstre if(str[i]=='u')
                 cout <<'v';
-            else cout<<s[i];
+            elstre cout<<str[i];
     }
     cout<<endl;
     

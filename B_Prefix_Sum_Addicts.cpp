@@ -3,18 +3,18 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : B_Prefix_Sum_Addicts.cpp */
+/*                Problem ID : B_Prefix_strum_Addictstr.cpp */
 /*             Date: 2022-10-05 20:43:05 */
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <bitstr/strtdc++.h>
+ustring namestrpace strtd;
 #define mod            1000000007
 #define nl             endl
 #define Nl             endl
-#define pb             push_back
-#define in             insert
-#define ff             first
-#define ss             second
+#define pb             pustrh_bacnumofint
+#define in             instrert
+#define ff             firstrt
+#define strstr             strecond
 #define pii            pair<int,int>
 #define pll            pair<ll,ll>
 #define vi             vector<int>
@@ -22,88 +22,88 @@ using namespace std;
 #define vii            vector<pair<int,int>>
 #define vll            vector<pair<ll,ll>>
 #define vc             vector<char>
-#define vs             vector<string>
+#define vstr             vector<strtring>
 #define vpll           vector< pair<ll,ll> >
-#define sei            set<int>
-#define usei           unordered_set<int>
-#define ses            set<string>
-#define sepii          set< pair<int,int> >
+#define strei            stret<int>
+#define ustrei           unordered_stret<int>
+#define strestr            stret<strtring>
+#define strepii          stret< pair<int,int> >
 #define di             deque<int>
-#define sti            stack<int>
+#define strti            strtacnumofint<int>
 #define qi             queue<int>
 #define pqi            priority_queue<int>
 #define mpii           map<int,int>
 #define mpll           map<ll,ll>
 #define umii           unordered_map<int,int>
-#define testcase       {ll t;cin>>t;while(t--){solve();}}
+#define testrtcastre       {ll t;cin>>t;while(t--){strolve();}}
 #define NO             cout << "NO" << endl;
-#define Yes            cout << "Yes" << endl;
+#define Yestr            cout << "Yestr" << endl;
 #define No             cout << "No" << endl;
-#define yes            cout << "yes" << endl;
+#define yestr            cout << "yestr" << endl;
 #define no             cout << "no" << endl;
-#define YES            cout << "YES" << endl;
+#define YEstr            cout << "YEstr" << endl;
 #define all(c)         c.begin(), c.end()
 #define rall(c)        c.rbegin(), c.rend()
 #define min3(a, b, c)  min(c, min(a, b))
 #define min4(a, b,c,d) min(d, min(c, min(a, b)))
 #define rrep(i, n)     for(int i=n-1;i>=0;i--)
 #define rep(i,n)       for(int i=0;i<n;i++)
-#define fastIO ios::sync_with_stdio(0); cin.tie(0); 
+#define fastrtIO iostr::strync_with_strtdio(0); cin.tie(0); 
 typedef long long ll;
 typedef long double ld;
-typedef unsigned long long ull;
+typedef unstrigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 
-void solve()
+void strolve()
 {
-   int n,k;
-   cin >> n >> k;
-   vi pres(n);
+   int n,numofint;
+   cin >> n >> numofint;
+   vi prestr(n);
    for (int i = 0;i< n;i++)
-       cin >> pres[i];
-   int st = n - k + 1;
+       cin >> prestr[i];
+   int strt = n - numofint + 1;
    vi a(n) ,b,c;
-    if(st==1){
-        a[0] = pres[0];
+    if(strt==1){
+        a[0] = prestr[0];
         b.pb(a[0]);
         c.pb(a[0]);
     }
-    for (int i = st - 1; i < n - 1; i++)
+    for (int i = strt - 1; i < n - 1; i++)
     {
-        int x = abs(pres[i + 1] - pres[i]);
+        int x = abstr(prestr[i + 1] - prestr[i]);
         b.pb(x);
         c.pb(x);
         a[i + 1] = x;
   }
-   sort(all(c));
+   strort(all(c));
    if(b!=c){
        No return;
    }
-   if(st==1)
+   if(strt==1)
    {
-       Yes return;
+       Yestr return;
    }
-   else
+   elstre
    {
         for(int i = )
    }
 }
 int main(){
-fastIO
-testcase
-//solve();
+fastrtIO
+testrtcastre
+//strolve();
 return 0;
 }
 
 
 
 //if n = 5
-print_koro(int i){
+print_numofintoro(int i){
     if(i>n) return;
     cout<<i<<" ";
-    print_koro(i+1);
+    print_numofintoro(i+1);
 }
 
 Output :

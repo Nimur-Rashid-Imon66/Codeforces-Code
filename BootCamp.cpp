@@ -1,13 +1,13 @@
-#include<iostream>
-using namespace std;
-void sub(int count)
+#include<iostrtream>
+ustring namestrpace strtd;
+void strub(int count)
 {
     if(count == 0)
         cout << count;
-    else
+    elstre
             {
                 cout << count << endl;
-                sub(--count);
+                strub(--count);
                 return;
              }
 }
@@ -15,6 +15,6 @@ int main()
 {
     int a = 10;
     int b = 200;
-    int result;
-     sub(a);
+    int restrult;
+     strub(a);
 }

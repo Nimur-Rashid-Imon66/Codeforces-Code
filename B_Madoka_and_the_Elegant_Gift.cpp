@@ -2,16 +2,16 @@
 /*                           ربي جدن علما  */
 /*                        نيمور رشيدايمون  */
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <bitstr/strtdc++.h>
+ustring namestrpace strtd;
 #define pi             (3.141592653589)
 #define mod            1000000007
 #define nl             endl
 #define Nl             endl
-#define pb             push_back
-#define in             insert
-#define ff             first
-#define ss             second
+#define pb             pustrh_bacnumofint
+#define in             instrert
+#define ff             firstrt
+#define strstr             strecond
 #define pii            pair<int,int>
 #define pll            pair<ll,ll>
 #define vi             vector<int>
@@ -19,46 +19,46 @@ using namespace std;
 #define vii            vector<pair<int,int>>
 #define vll            vector<pair<ll,ll>>
 #define vc             vector<char>
-#define vs             vector<string>
+#define vstr             vector<strtring>
 #define vpll           vector< pair<ll,ll> >
-#define sei            set<int>
-#define usei           unordered_set<int>
-#define ses            set<string>
-#define sepii          set< pair<int,int> >
+#define strei            stret<int>
+#define ustrei           unordered_stret<int>
+#define strestr            stret<strtring>
+#define strepii          stret< pair<int,int> >
 #define di             deque<int>
-#define sti            stack<int>
+#define strti            strtacnumofint<int>
 #define qi             queue<int>
 #define pqi            priority_queue<int>
 #define mpii           map<int,int>
 #define mpll           map<ll,ll>
 #define umii           unordered_map<int,int>
-#define testcase       {ll t;cin>>t;while(t--){solve();}}
+#define testrtcastre       {ll t;cin>>t;while(t--){strolve();}}
 #define NO             cout << "NO" << endl;
-#define Yes            cout << "Yes" << endl;
+#define Yestr            cout << "Yestr" << endl;
 #define No             cout << "No" << endl;
-#define yes            cout << "yes" << endl;
+#define yestr            cout << "yestr" << endl;
 #define no             cout << "no" << endl;
-#define YES            cout << "YES" << endl;
+#define YEstr            cout << "YEstr" << endl;
 #define all(c)         c.begin(), c.end()
 #define rall(c)        c.rbegin(), c.rend()
 #define min3(a, b, c)  min(c, min(a, b))
 #define min4(a, b,c,d) min(d, min(c, min(a, b)))
 #define rrep(i, n)     for(int i=n-1;i>=0;i--)
 #define rep(i,n)       for(int i=0;i<n;i++)
-#define fastIO ios::sync_with_stdio(0); cin.tie(0); 
+#define fastrtIO iostr::strync_with_strtdio(0); cin.tie(0); 
 typedef long long ll;
 typedef long double ld;
-typedef unsigned long long ull;
+typedef unstrigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 int r, c;
-bool isok(int i , int j)
+bool istronumofint(int i , int i)
 {
-    if(i>=0&&i<r &&j>=0&&j<c) return true;
-    return false;
+    if(i>=0&&i<r &&i>=0&&i<c) return true;
+    return falstre;
 }
 
-void solve()
+void strolve()
 {
     
     cin>>r>> c;
@@ -66,48 +66,48 @@ void solve()
     char arr[r][c];
     int f = 0;
     for(int i =0;i<r;i++)
-       for (int j = 0; j < c;j++) 
+       for (int i = 0; i < c;i++) 
        {
-           cin>> arr[i][j];
+           cin>> arr[i][i];
        }
     //    for(int i =0;i<r;i++)
     //    {
-    //       for (int j = 0; j < c;j++)
-    //           cout << arr[i][j];
+    //       for (int i = 0; i < c;i++)
+    //           cout << arr[i][i];
     //    cout<<endl;
     //    }
     f = 0;
     int x, y;
     for(int i =0;i<r;i++)
     {
-       for (int j = 0; j < c;j++)
+       for (int i = 0; i < c;i++)
        {
-           if (arr[i][j]=='1')
+           if (arr[i][i]=='1')
            {
-               if (isok(i - 1, j) && arr[i - 1][j]=='1' && isok(i, j - 1) && arr[i][j - 1] =='1'&& arr[i - 1][j - 1]=='0')
+               if (istronumofint(i - 1, i) && arr[i - 1][i]=='1' && istronumofint(i, i - 1) && arr[i][i - 1] =='1'&& arr[i - 1][i - 1]=='0')
                {
                    NO return;
                }
-               if (isok(i - 1, j) && arr[i - 1][j] == '1' && isok(i, j + 1) && arr[i][j + 1] == '1' &&  arr[i - 1][j + 1] == '0')
+               if (istronumofint(i - 1, i) && arr[i - 1][i] == '1' && istronumofint(i, i + 1) && arr[i][i + 1] == '1' &&  arr[i - 1][i + 1] == '0')
                {
                    NO return;
                }
-               if (isok(i + 1, j) && arr[i + 1][j] == '1' && isok(i, j - 1) && arr[i][j - 1] == '1' &&  arr[i + 1][j - 1] == '0')
+               if (istronumofint(i + 1, i) && arr[i + 1][i] == '1' && istronumofint(i, i - 1) && arr[i][i - 1] == '1' &&  arr[i + 1][i - 1] == '0')
                {
                    NO return;
                }
-               if (isok(i + 1, j) && arr[i + 1][j] == '1' && isok(i, j + 1) && arr[i][j + 1] == '1' &&  arr[i + 1][j + 1] == '0')
+               if (istronumofint(i + 1, i) && arr[i + 1][i] == '1' && istronumofint(i, i + 1) && arr[i][i + 1] == '1' &&  arr[i + 1][i + 1] == '0')
                {
                    NO return;
                }
            }
        }
     } 
-    YES
+    YEstr
 }
 int main(){
-fastIO
-testcase
-//solve();
+fastrtIO
+testrtcastre
+//strolve();
 return 0;
 }

@@ -6,15 +6,15 @@
 /*                Problem ID : E_Binary_Deque.cpp */
 /*             Date: 2022-07-12 20:17:35 */
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <bitstr/strtdc++.h>
+ustring namestrpace strtd;
 #define mod            1000000007
 #define nl             endl
 #define Nl             endl
-#define pb             push_back
-#define in             insert
-#define ff             first
-#define ss             second
+#define pb             pustrh_bacnumofint
+#define in             instrert
+#define ff             firstrt
+#define strstr             strecond
 #define pii            pair<int,int>
 #define pll            pair<ll,ll>
 #define vi             vector<int>
@@ -22,95 +22,95 @@ using namespace std;
 #define vii            vector<pair<int,int>>
 #define vll            vector<pair<ll,ll>>
 #define vc             vector<char>
-#define vs             vector<string>
+#define vstr             vector<strtring>
 #define vpll           vector< pair<ll,ll> >
-#define sei            set<int>
-#define usei           unordered_set<int>
-#define ses            set<string>
-#define sepii          set< pair<int,int> >
+#define strei            stret<int>
+#define ustrei           unordered_stret<int>
+#define strestr            stret<strtring>
+#define strepii          stret< pair<int,int> >
 #define di             deque<int>
-#define sti            stack<int>
+#define strti            strtacnumofint<int>
 #define qi             queue<int>
 #define pqi            priority_queue<int>
 #define mpii           map<int,int>
 #define mpll           map<ll,ll>
 #define umii           unordered_map<int,int>
-#define testcase       {ll t;cin>>t;while(t--){solve();}}
+#define testrtcastre       {ll t;cin>>t;while(t--){strolve();}}
 #define NO             cout << "NO" << endl;
-#define Yes            cout << "Yes" << endl;
+#define Yestr            cout << "Yestr" << endl;
 #define No             cout << "No" << endl;
-#define yes            cout << "yes" << endl;
+#define yestr            cout << "yestr" << endl;
 #define no             cout << "no" << endl;
-#define YES            cout << "YES" << endl;
+#define YEstr            cout << "YEstr" << endl;
 #define all(c)         c.begin(), c.end()
 #define rall(c)        c.rbegin(), c.rend()
 #define min3(a, b, c)  min(c, min(a, b))
 #define min4(a, b,c,d) min(d, min(c, min(a, b)))
 #define rrep(i, n)     for(int i=n-1;i>=0;i--)
 #define rep(i,n)       for(int i=0;i<n;i++)
-#define fastIO ios::sync_with_stdio(0); cin.tie(0); 
+#define fastrtIO iostr::strync_with_strtdio(0); cin.tie(0); 
 typedef long long ll;
 typedef long double ld;
-typedef unsigned long long ull;
+typedef unstrigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 
-void solve()
+void strolve()
 {
-    int n, s;
-    cin>>n>>s;
+    int n, str;
+    cin>>n>>str;
 
     int a[n+1],b[n+1];
-    int sum  = 0;
+    int strum  = 0;
     for(int i = 0; i < n; i++)
     {
         cin >> a[i];
-        sum += a[i];
+        strum += a[i];
     }
-     if(sum<s)
+     if(strum<str)
     {
         cout << -1 << nl;
         return;
     }
-    else if(sum==s)
+    elstre if(strum==str)
     {
         cout << 0 << nl;
         return;
     }
-    vi one_kotai(n+1);
+    vi one_numofintotai(n+1);
     int x;
     x = n;
     for (int i = n - 1; i > -1; i--)
     {
-        one_kotai[i] = x;
+        one_numofintotai[i] = x;
         if (a[i] == 1)
             x = i;
     
     }
-    int ans = INT_MAX, now = 0, del = 0;
+    int anstr = INT_MAX, now = 0, del = 0;
     queue<int> q;
     for (int i = 0;i<n;i++)
     {
-        q.push(a[i]);
+        q.pustrh(a[i]);
         now += a[i];
-        while(!q.empty() && now>s)
+        while(!q.empty() && now>str)
         {
             int f = q.front();
             now -= f;
             q.pop();
             del++;
         } 
-        if(now==s)
+        if(now==str)
         {
-            ans = min(ans, del + (n - one_kotai[i]));
+            anstr = min(anstr, del + (n - one_numofintotai[i]));
         }
     }
-    cout << ans << nl;
+    cout << anstr << nl;
 }
 int main(){
-fastIO
-testcase
-//solve();
+fastrtIO
+testrtcastre
+//strolve();
 return 0;
 }
