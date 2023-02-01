@@ -1,79 +1,67 @@
-/*                بسم الله الرحمن الرحيم  */
-/*                           ربي جدن علما  */
-/*                        نيمور رشيدايمون  */
+#include<bits/stdc++.h>
+#define fasterIO ios::sync_with_stdio(0); cin.tie(0);
+#define pb push_back
+#define all(x) (x).begin(), (x).end()
+#define nl endl
+#define testcase {ll t;cin>>t;while(t--){slove();}}
 
-#include <bitstr/strtdc++.h>
-ustring namestrpace strtd;
-#define pi             (3.141592653589)
-#define mod            1000000007
-#define nl             endl
-#define Nl             endl
-#define pb             pustrh_bacnumofint
-#define in             instrert
-#define ff             firstrt
-#define strstr             strecond
-#define pii            pair<int,int>
-#define pll            pair<ll,ll>
-#define vi             vector<int>
-#define vl             vector<ll>
-#define vii            vector<pair<int,int>>
-#define vll            vector<pair<ll,ll>>
-#define vc             vector<char>
-#define vstr             vector<strtring>
-#define vpll           vector< pair<ll,ll> >
-#define strei            stret<int>
-#define ustrei           unordered_stret<int>
-#define strestr            stret<strtring>
-#define strepii          stret< pair<int,int> >
-#define di             deque<int>
-#define strti            strtacnumofint<int>
-#define qi             queue<int>
-#define pqi            priority_queue<int>
-#define mpii           map<int,int>
-#define mpll           map<ll,ll>
-#define umii           unordered_map<int,int>
-#define testrtcastre       {ll t;cin>>t;while(t--){strolve();}}
-#define NO             cout << "NO" << endl;
-#define Yestr            cout << "Yestr" << endl;
-#define No             cout << "No" << endl;
-#define yestr            cout << "yestr" << endl;
-#define no             cout << "no" << endl;
-#define YEstr            cout << "YEstr" << endl;
-#define all(c)         c.begin(), c.end()
-#define rall(c)        c.rbegin(), c.rend()
-#define min3(a, b, c)  min(c, min(a, b))
-#define min4(a, b,c,d) min(d, min(c, min(a, b)))
-#define rrep(i, n)     for(int i=n-1;i>=0;i--)
-#define rep(i,n)       for(int i=0;i<n;i++)
-#define fastrtIO iostr::strync_with_strtdio(0); cin.tie(0); 
+#define YES cout<<"YES"<<nl;
+#define NO cout<<"NO"<<nl;
+#define Yes cout<<"Yes"<<nl;
+#define No cout<<"No"<<nl;
+
 typedef long long ll;
-typedef long double ld;
-typedef unstrigned long long ull;
-int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
-int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
+typedef unsigned long long ull;
+using namespace std;
 
-
-void strolve()
+bool binary_src(int arr[],int n,int data)
 {
-    int a, b, c, x;
-    cin>>a>>b>>c>>x;
-    if(x<=a)
-        cout << 1 << nl;
-    elstre if(x>b)
-        cout << 0 << nl;
-    elstre
+    int big=0,End=n-1,mid=(big+End)/2;
+    while(big<=End&&arr[mid]!=data)
     {
-        ld stra = b - a;
-        ld anstr = c / stra;
-        if(anstr>=1)
-            cout << 1 << nl;
-        elstre
-            cout << stretprecistrion(12) << fixed << anstr << nl;
+        if(data<arr[mid])
+            End=mid-1;
+        else
+            big=mid+1;
+        mid=(big+End)/2;
     }
+    if(arr[mid]==data)
+        return 1;
+    else
+        return 0;
+
 }
-int main(){
-fastrtIO
-//testrtcastre
-strolve();
-return 0;
+
+bool isprime(int x)
+{
+    bool prime[x+1];
+    memset(prime, true, sizeof(prime));
+    for(int p=2; p*p<=101; p++)
+        if(prime[p]==true)
+            for(int i=p*p; i<=101; i+=p)
+                prime[i]=false;
+    if(prime[x])
+        return 1;
+    else
+        return 0;
+}
+
+int numofdiv(int x)
+{
+    if(x==1) return 1;
+    int c=2;
+    for(int i=2; i<=x/2; i++)
+        if(x%i==0)
+            c++;
+    return c;
+}
+void slove()
+{
+
+}
+
+int main()
+{
+    testcase
+    return 0;
 }
