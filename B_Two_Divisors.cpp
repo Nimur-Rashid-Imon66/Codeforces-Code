@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Arranging_The_Sheep.cpp */
-/*             Date: 2023-08-15 10:24:09 */
+/*                Problem ID : B_Two_Divisors.cpp */
+/*             Date: 2023-12-30 21:19:53 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -59,74 +59,43 @@ typedef unsigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
+#define  pi         acos(-1.0)
+#define  cos(a)     cos(a*pi/180)
+#define  sin(a)     sin(a*pi/180)
+#define  tan(a)     tan(a*pi/180)
+#define  cosi(a)    acos(a)/(pi/180)
+#define  sini(a)    asin(a)/(pi/180)
+#define  tani(a)    atan(a)/(pi/180)
+#define  Max3(a,b,c) max(a,max(b,c))
+#define  Min3(a,b,c) min(a,min(b,c))
+ll Pow(ll c, ll d) {return d == 0 ? 1 : c * Pow(c, d - 1);}
+ll gcd(ll a, ll b) {return b == 0 ? a : gcd(b, a % b);}
+ll lcm(ll a, ll b) {return ((a * b) / gcd(a, b));}
+ll BigMod(ll b, ll p, ll m) {if (p == 0) return 1;ll ans = BigMod(b, p/2, m);ans = ( ans * ans ) % m;if (p % 2 == 1) ans = (ans * b) % m;return ans;}
+ll binarySearch(ll arr[], ll l, ll r, ll x) {if (r >= l){ll mid = l+(r-l) / 2;if (arr[mid] == x) return mid;if (arr[mid] > x) return binarySearch(arr, l, mid-1, x);return binarySearch(arr, mid+1, r, x);}return -1 ;}
+ll ModInv(ll a, ll m){return BigMod(a, m-2, m);}
+ll base_to_dec(ll base , string x){ll da = 0,j = 0,i = x.size() - 1;while(i>=0){int z = (x[j] - '0');da += z * Pow(base, i);i--,j++;}return da;}
 
-void solve(){
 
-    int n;
-    cin >> n;
-    string s;
-    cin>>s;
-    // cout<<s<<endl;
-    bool f = 1,sheep=0,srt = 1;
-    int nos = 0;
-    vi x;
-    for(int i=0;i<n;i++)
-    {
-        if(s[i]=='*') x.pb(i);
-        if(!f && s[i]=='*') srt = 0;
-        if(sheep && s[i]=='.') f = 0;
-        if(!sheep && s[i]=='*') sheep=1;
-    }
-    if(f||srt)
-    {
-        cout<<0<<endl;
-        return;
-    }
-    nos = x.size();
-    int fh = x[nos/2];
-    int sh = x[nos/2 - 1];
-    int cnt = 0;
+void solve()
+{
+   ll a,b;
+   cin >> a >>b;
 
-    cnt = 0;
-    ll cnt_f = 0;
-    for(int i = fh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += fh - i - 1-cnt;
-            cnt++;
-        }
-    }cnt = 0;
-    for(int i = fh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += i - fh - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    ll cnt_s = 0;
-    for(int i = sh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += sh - i - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    //cout<<fh<<" "<<sh<<nl;
-    for(int i = sh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += i - sh - 1-cnt;
-            cnt++;
-        }
-    }
-    cout<<min(cnt_f,cnt_s)<<endl;
+   if(a==1)
+   {
+    cout<< b*b<<endl;
+    return;
+   }
 
+  if(lcm(a,b) == b )
+  {
+    cout<< lcm (a,b) * (b/a) <<endl;
+    return;
+  }
+ cout<<lcm(a,b) <<endl;
+   
+ 
 
 }
 int main(){

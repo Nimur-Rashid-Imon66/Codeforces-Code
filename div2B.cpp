@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Arranging_The_Sheep.cpp */
-/*             Date: 2023-08-15 10:24:09 */
+/*                Problem ID : div2B.cpp */
+/*             Date: 2023-12-28 20:41:04 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -60,74 +60,39 @@ int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 
-void solve(){
-
-    int n;
-    cin >> n;
-    string s;
-    cin>>s;
-    // cout<<s<<endl;
-    bool f = 1,sheep=0,srt = 1;
-    int nos = 0;
-    vi x;
-    for(int i=0;i<n;i++)
+void solve()
+{
+  int n;
+  cin >> n;
+  string s; cin>>s;
+  map<char,int> c,v;
+  c.insert({'b',1});
+  c.insert({'c',1});
+  c.insert({'d',1});
+  v.insert({'a',1});
+  v.insert({'e',1});
+  string ans = "";
+  for(int i =n-1;i>0;i--)
+  {
+    if(c[s[i]])
     {
-        if(s[i]=='*') x.pb(i);
-        if(!f && s[i]=='*') srt = 0;
-        if(sheep && s[i]=='.') f = 0;
-        if(!sheep && s[i]=='*') sheep=1;
+        ans += s[i];
+        i--;
+        ans += s[i];
+        i--;
+        ans += s[i]; 
+        ans += "."; 
     }
-    if(f||srt)
-    {
-        cout<<0<<endl;
-        return;
+    else{
+        ans += s[i];
+        i--;
+        ans += s[i]; 
+        ans += ".";
     }
-    nos = x.size();
-    int fh = x[nos/2];
-    int sh = x[nos/2 - 1];
-    int cnt = 0;
-
-    cnt = 0;
-    ll cnt_f = 0;
-    for(int i = fh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += fh - i - 1-cnt;
-            cnt++;
-        }
-    }cnt = 0;
-    for(int i = fh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += i - fh - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    ll cnt_s = 0;
-    for(int i = sh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += sh - i - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    //cout<<fh<<" "<<sh<<nl;
-    for(int i = sh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += i - sh - 1-cnt;
-            cnt++;
-        }
-    }
-    cout<<min(cnt_f,cnt_s)<<endl;
-
-
+  }
+  ans.pop_back();
+  reverse(all(ans));
+  cout<<ans<<endl;
 }
 int main(){
 fastIO

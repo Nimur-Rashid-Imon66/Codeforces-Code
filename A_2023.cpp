@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Arranging_The_Sheep.cpp */
-/*             Date: 2023-08-15 10:24:09 */
+/*                Problem ID : A_2023.cpp */
+/*             Date: 2023-12-30 20:54:06 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -60,74 +60,84 @@ int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 
-void solve(){
-
-    int n;
-    cin >> n;
-    string s;
-    cin>>s;
-    // cout<<s<<endl;
-    bool f = 1,sheep=0,srt = 1;
-    int nos = 0;
-    vi x;
-    for(int i=0;i<n;i++)
-    {
-        if(s[i]=='*') x.pb(i);
-        if(!f && s[i]=='*') srt = 0;
-        if(sheep && s[i]=='.') f = 0;
-        if(!sheep && s[i]=='*') sheep=1;
+void solve()
+{
+    int n,k;
+    cin >> n>>k;
+    vi a(n);
+    ll ans = 1;
+    for (int i = 0; i < n;i++){
+        cin>>a[i];
+        ans *= a[i];
     }
-    if(f||srt)
+    if(ans==2023)
     {
-        cout<<0<<endl;
+        YES
+        for(int i = 0; i < k; i++){
+            cout<<1<<" ";
+        }
+        cout<<endl;
         return;
     }
-    nos = x.size();
-    int fh = x[nos/2];
-    int sh = x[nos/2 - 1];
-    int cnt = 0;
-
-    cnt = 0;
-    ll cnt_f = 0;
-    for(int i = fh-1;i>=0;i--)
+    if(ans==7)
     {
-        if(s[i]=='*')
-        {
-            cnt_f += fh - i - 1-cnt;
-            cnt++;
+        YES
+        cout<<17*17<<" ";
+        k--;
+       for(int i = 0; i < k; i++){
+            cout<<1<<" ";
         }
-    }cnt = 0;
-    for(int i = fh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += i - fh - 1-cnt;
-            cnt++;
-        }
+        cout<<endl;
+        return;
     }
-    cnt = 0;
-    ll cnt_s = 0;
-    for(int i = sh-1;i>=0;i--)
+    if(ans==17)
     {
-        if(s[i]=='*')
-        {
-            cnt_s += sh - i - 1-cnt;
-            cnt++;
+        YES
+        cout<<7*17<<" ";
+        k--;
+       for(int i = 0; i < k; i++){
+            cout<<1<<" ";
         }
+        cout<<endl;
+        return;
     }
-    cnt = 0;
-    //cout<<fh<<" "<<sh<<nl;
-    for(int i = sh+1;i<n;i++)
+     if(ans==289)
     {
-        if(s[i]=='*')
-        {
-            cnt_s += i - sh - 1-cnt;
-            cnt++;
+        YES
+        cout<<7<<" ";
+        k--;
+       for(int i = 0; i < k; i++){
+            cout<<1<<" ";
         }
+        cout<<endl;
+        return;
     }
-    cout<<min(cnt_f,cnt_s)<<endl;
+    if(ans==119)
+    {
+        YES
+        cout<<17<<" ";
+        k--;
+       for(int i = 0; i < k; i++){
+            cout<<1<<" ";
+        }
+        cout<<endl;
+        return;
+    }
+    if(ans==1)
+    {
+        YES
+        cout<<2023<<" ";
+        k--;
+       for(int i = 0; i < k; i++){
+            cout<<1<<" ";
+        }
+        cout<<endl;
+        return;
+    }
 
+    NO
 
+  
 }
 int main(){
 fastIO

@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Arranging_The_Sheep.cpp */
-/*             Date: 2023-08-15 10:24:09 */
+/*                Problem ID : B_Preparing_for_the_Contest.cpp */
+/*             Date: 2023-12-19 20:53:01 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -60,72 +60,16 @@ int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
 
-void solve(){
-
-    int n;
-    cin >> n;
-    string s;
-    cin>>s;
-    // cout<<s<<endl;
-    bool f = 1,sheep=0,srt = 1;
-    int nos = 0;
-    vi x;
-    for(int i=0;i<n;i++)
-    {
-        if(s[i]=='*') x.pb(i);
-        if(!f && s[i]=='*') srt = 0;
-        if(sheep && s[i]=='.') f = 0;
-        if(!sheep && s[i]=='*') sheep=1;
-    }
-    if(f||srt)
-    {
-        cout<<0<<endl;
-        return;
-    }
-    nos = x.size();
-    int fh = x[nos/2];
-    int sh = x[nos/2 - 1];
-    int cnt = 0;
-
-    cnt = 0;
-    ll cnt_f = 0;
-    for(int i = fh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += fh - i - 1-cnt;
-            cnt++;
-        }
-    }cnt = 0;
-    for(int i = fh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += i - fh - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    ll cnt_s = 0;
-    for(int i = sh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += sh - i - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    //cout<<fh<<" "<<sh<<nl;
-    for(int i = sh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += i - sh - 1-cnt;
-            cnt++;
-        }
-    }
-    cout<<min(cnt_f,cnt_s)<<endl;
+void solve()
+{
+  int n,k;
+  cin>>n>>k;
+  int x = k+1;
+  for(int i = 1;i<x;i++)
+   cout<<i<<" ";
+for(int i = n;i>=x ;i--) 
+    cout<<i<<" ";
+cout<<endl;
 
 
 }

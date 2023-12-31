@@ -3,8 +3,8 @@
 /*                        نيمور رشيدايمون  */
 
 
-/*                Problem ID : E_Arranging_The_Sheep.cpp */
-/*             Date: 2023-08-15 10:24:09 */
+/*                Problem ID : C_Quests.cpp */
+/*             Date: 2023-12-19 21:17:31 */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -59,74 +59,48 @@ typedef unsigned long long ull;
 int dx[8] = {-1, 1, 0, 0,-1,1,-1,1};
 int dy[8] = {0, 0, 1, -1,-1,1,1,-1};
 
+struct myComp {
+    constexpr bool operator()(
+        pair<int, int> const& a,
+        pair<int, int> const& b)
+        const noexcept
+    {
+        if (a.first == b.first)
+           return a.second < b.second;
+        else return a.first < b.first;
+    }
+};
+ 
+void solve()
+{
+   int n,k;
+   cin >> n>>k;
+   vi a(n),b(n);
+   for(int i=0;i<n;i++) cin >>a[i];
+   for(int i=0;i<n;i++) cin >>b[i];
 
-void solve(){
+   ll ans = a[0];
+   int cnt = 1;
+   priority_queue<pii, vector<pii>, myComp> q;
+   q.push({b[0],0});
+   q.push({a[1],1});
+   int i = 0;
+   while(cnt!=k)
+   {
+     pii x = q.top();
+     if(x.ss>i)
+     {
+        i = x.ss;
+        q.pop();
+        q.push({b[i],i});
+        if(i<n-1)  q.push({a[i+1],i+1});
+     }
+    //  cout<<x.ss<<" ";
+     ans+= x.ff;
+     cnt++;
 
-    int n;
-    cin >> n;
-    string s;
-    cin>>s;
-    // cout<<s<<endl;
-    bool f = 1,sheep=0,srt = 1;
-    int nos = 0;
-    vi x;
-    for(int i=0;i<n;i++)
-    {
-        if(s[i]=='*') x.pb(i);
-        if(!f && s[i]=='*') srt = 0;
-        if(sheep && s[i]=='.') f = 0;
-        if(!sheep && s[i]=='*') sheep=1;
-    }
-    if(f||srt)
-    {
-        cout<<0<<endl;
-        return;
-    }
-    nos = x.size();
-    int fh = x[nos/2];
-    int sh = x[nos/2 - 1];
-    int cnt = 0;
-
-    cnt = 0;
-    ll cnt_f = 0;
-    for(int i = fh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += fh - i - 1-cnt;
-            cnt++;
-        }
-    }cnt = 0;
-    for(int i = fh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_f += i - fh - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    ll cnt_s = 0;
-    for(int i = sh-1;i>=0;i--)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += sh - i - 1-cnt;
-            cnt++;
-        }
-    }
-    cnt = 0;
-    //cout<<fh<<" "<<sh<<nl;
-    for(int i = sh+1;i<n;i++)
-    {
-        if(s[i]=='*')
-        {
-            cnt_s += i - sh - 1-cnt;
-            cnt++;
-        }
-    }
-    cout<<min(cnt_f,cnt_s)<<endl;
-
+   }
+   cout<<ans<<endl;
 
 }
 int main(){
